@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>First HTML CSS and JavaScript</title>
+
+  <style>
+    /*This is a CSS comment.*/
+    .outer-button
+    {
+      color: white;
+      background-color: red;
+      border: none;
+    }
+
+    .inner-button
+    {
+      color: black;
+      background-color: yellow;
+    }
+  </style>
+</head>
+<body>
+  <!--This is an HTML comment.-->
+  <button title="Good job!" class="outer-button"
+    onclick="alert('Good job')">
+    hello
+  </button>
+  <p>
+    paragraph of <button class="inner-button">hello</button> text
+  </p>
+
+  <script>
+    // This is a javascript comment.
+    /* This is also a javascript comment.*/
+    // alert('hello from javascript');
+    console.log(2 ** 8);
+  </script>
+</body>
+</html>
