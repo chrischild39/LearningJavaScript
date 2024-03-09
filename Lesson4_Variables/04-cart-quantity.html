@@ -34,10 +34,37 @@
   </button>
   <button 
     onclick="
+      cartQuantity += 4;
+      console.log(`Cart Quantity: ${cartQuantity}`)">
+    Add Four To Cart
+  </button>
+  <button 
+    onclick="
+      cartQuantity += 5;
+      console.log(`Cart Quantity: ${cartQuantity}`)">
+    Add Five To Cart
+  </button>
+  <button 
+    onclick="
+      cartQuantity--;">
+    Remove One Item From Cart
+  </button>  
+  <button 
+    onclick="
+      cartQuantity -= 2;">
+    Remove Two Items From Cart
+  </button>  
+  <button 
+    onclick="
+      cartQuantity -= 3;">
+    Remove Three Items From Cart
+  </button>      
+  <button 
+    onclick="
       cartQuantity = 0;
       console.log(`Cart Quantity: ${cartQuantity}`)">
     Reset Cart
-  </button>
+  </button>    
 </body>
 <script>
   let cartQuantity = 0
