@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rock - Paper - Scissors</title>
+</head>
+<body>
+  <p>
+    Rock paper Scissors
+  </p>
+  <button onclick="
+    let computerOption = getComputerOption();
+    let playerOption = 'Rock';
+    updateScore(playerOption, computerOption);
+    logResults(playerOption, computerOption);">
+    Rock
+  </button>
+  <button onclick="
+    computerOption = getComputerOption();
+    playerOption = 'Paper';
+    updateScore(playerOption, computerOption);
+    logResults(playerOption, computerOption);">
+    Paper
+  </button>
+  <button onclick="
+    computerOption = getComputerOption();
+    playerOption = 'Scissors';
+    updateScore(playerOption, computerOption);
+    logResults(playerOption, computerOption);">
+    Scissors
+  </button>
+</body>
+<script>
+  let resultText = '';
+  let ties = 0;
+  let wins = 0;
+  let losses = 0;
+
+  function getComputerOption()
+  {
+    let randomNumber = Math.random();
+    let options = 3;
+    let mappedOption = '';
+
+    for (let i = 0; i < options; i++)
+    {
+      let lowerComparison = i === 0 ? i : i / options;
+      if (randomNumber >= lowerComparison && randomNumber < (i + 1) / options)
+      {
+        mappedOption = getNumberToOptionMapping(i);
+        break;
+      }
+    }
+
+    return mappedOption;
+  }
+
+  function getNumberToOptionMapping(optionNumber)
+  {
+    let option = '';
+
+    switch (optionNumber)
+    {
+      case 0:
+        option = 'Rock'
+        break;
+      case 1:
+        option = 'Paper'
+        break;
+      case 2:
+        option = 'Scissors'
+        break; 
+      default:
+        throw new Error(`The option number passed in: ${optionNumber} - is not currently mapped to an output.`);    
+    }
+
+    return option;
+  }  
+
+  function updateScore(playerMove, computerMove)
+  {
+    if (playerMove === computerMove)
+    {
+      resultText = 'Ties';
+      ties++;
+    }
+    else if (
+      (playerMove === 'Rock' && computerMove === 'Paper') ||
+      (playerMove === 'Paper' && computerMove === 'Scissors') ||
+      (playerMove === 'Scissors' && computerMove === 'Rock'))
+    {
+      resultText = 'You lose. Better luck next time!';
+      losses++;
+    }
+    else
+    {
+      resultText = 'You win! Congratulations!';
+      wins++;
+    }
+  }
+
+  function logResults(playerMove, computerOption)
+  {
+    console.log(
+    `Computer Move: ${computerOption}\n` + 
+    `Player Move: ${playerMove}\n` + 
+    `Ties: ${ties}, Wins: ${wins}, Losses: ${losses}\n`);
+  }
+</script>
+</html>
