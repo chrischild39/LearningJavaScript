@@ -73,62 +73,98 @@
 <body>
   <div class="calculator">
     <div class="calculator-grid">
-      <button>
+      <button onclick="
+        calculation += '1';
+        console.log(calculation);">
         1
       </button>
-      <button>
+      <button onclick="
+      calculation += '2';
+        console.log(calculation);">
         2
       </button>
-      <button>
+      <button onclick="
+      calculation += '3';
+        console.log(calculation);">
         3
       </button>
-      <button class="operation-button">
+      <button class="operation-button" onclick="
+        calculation += ' + ';
+        console.log(calculation);">
         +
       </button>       
-      <button>
+      <button onclick="
+        calculation += '4';
+        console.log(calculation);">
         4
       </button>
-      <button>
+      <button onclick="
+        calculation += '5';
+        console.log(calculation);">
         5
       </button>
-      <button>
+      <button onclick="
+        calculation += '6';
+        console.log(calculation);">
         6
       </button>
-      <button class="operation-button">
+      <button class="operation-button" onclick="
+        calculation += ' - ';
+        console.log(calculation);">
         -
       </button>
-      <button>
+      <button onclick="
+        calculation += '7';
+        console.log(calculation);">
         7
       </button>
-      <button>
+      <button onclick="
+        calculation += '8';
+        console.log(calculation);">
         8
       </button>
-      <button>
+      <button onclick="
+        calculation += '9';
+        console.log(calculation);">
         9
       </button>
-      <button class="operation-button">
+      <button class="operation-button" onclick="
+        calculation += ' * ';
+        console.log(calculation);">
         *
       </button>    
-      <button>
+      <button onclick="
+        calculation += '0';
+        console.log(calculation);">
         0
       </button>
-      <button>
+      <button onclick="
+        calculation += '.';
+        console.log(calculation);">
         .
       </button>    
-      <button>
+      <button onclick="
+        result = eval(calculation);
+        console.log(`Result: ${result}`);
+        calculation = '';">
         =
       </button>
-      <button class="operation-button">
+      <button class="operation-button" onclick="
+        calculation += ' / ';
+        console.log(calculation);">
         /
       </button>    
-      <button class="clear-button">
+      <button class="clear-button" onclick="
+        console.log(`Clearing...`);
+        calculation = '';
+        result = 0;">
         Clear
       </button>
     </div>
   </div>
 </body>
 <script>
-  let value = 0;
-  let textString = `${value} bitch`;
+  let calculation = "";
+  let result = 0;
 </script>
 </html>
